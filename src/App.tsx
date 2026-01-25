@@ -8,8 +8,8 @@ function App() {
   return (
     <Layout>
       <Hero />
-      <Documentation />
       <Deliverables />
+      <Documentation />
       <Footer />
     </Layout>
   );
