@@ -1,9 +1,12 @@
-export default function Documentation() {
+export default function Resources() {
   return (
-    <section id="documentation" className="py-20 bg-gray-50">
-      <div className="max-w-4xl mx-auto px-6">
+    <section
+      id="resources"
+      className="py-20 flex flex-col items-center"
+    >
+      <div className="text-center max-w-4xl w-full mx-auto px-6">
         <h2 className="text-3xl font-bold text-gray-900 mb-8">
-          Documentation
+          Resources
         </h2>
         
         <div className="space-y-6">
