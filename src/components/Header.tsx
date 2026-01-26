@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <nav className="sticky top-0 bg-white border-b shadow-sm z-10">
+    <nav className="sticky top-0 border-b shadow-sm z-10">
       <div className="max-w-4xl mx-auto px-6 py-4">
         <ul className="flex gap-8 text-sm font-medium">
           <li>

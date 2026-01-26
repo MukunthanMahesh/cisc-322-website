@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section id="hero" className="py-20 bg-white">
+    <section id="hero" className="py-20">
       <div className="max-w-4xl mx-auto px-6">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           CISC 322 Group 14
