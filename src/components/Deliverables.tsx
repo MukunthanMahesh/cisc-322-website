@@ -32,21 +32,19 @@ export default function Deliverables() {
           Assignments
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="flex flex-col gap-6">
           {deliverables.map((deliverable, index) => (
             <div
               key={index}
-              className={index === deliverables.length - 1 && deliverables.length % 2 === 1 ? "md:col-span-2 md:flex md:justify-center" : ""}
+              className=""
             >
-              <div className={index === deliverables.length - 1 && deliverables.length % 2 === 1 ? "md:w-1/2" : "w-full"}>
-                <DeliverableCard
-                  title={deliverable.title}
-                  date={deliverable.date}
-                  description={deliverable.description}
-                  pdfUrl={deliverable.pdfUrl}
-                  videoUrl={deliverable.videoUrl}
-                />
-              </div>
+              <DeliverableCard
+                title={deliverable.title}
+                date={deliverable.date}
+                description={deliverable.description}
+                pdfUrl={deliverable.pdfUrl}
+                videoUrl={deliverable.videoUrl}
+              />
             </div>
           ))}
         </div>
