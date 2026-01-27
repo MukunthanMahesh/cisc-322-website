@@ -10,6 +10,7 @@ const navItems = [
 
 export default function Header() {
   const [visible, setVisible] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,7 +21,6 @@ export default function Header() {
       }
 
       const rect = hero.getBoundingClientRect();
-      // Show navbar only after the hero is fully scrolled past
       setVisible(rect.bottom <= 0);
     };
 
@@ -37,36 +37,85 @@ export default function Header() {
     "relative after:content-[''] after:absolute after:bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-[2px] after:bg-white after:transition-all after:duration-300 hover:after:w-[60%] hover:text-white";
 
   return (
-    <nav
-      className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-transform duration-300 ${
-        visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-3 pointer-events-none'
-      }`}
-    >
-      <div className="bg-white/10 backdrop-blur-xl rounded-[50px] shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-white/15 px-6 py-2">
-      <ul className="flex gap-1 items-center uppercase">
-          {navItems.map((item) => (
-            <li key={item.href}>
-              {item.isHome ? (
+    <>
+      {/* Desktop navbar — centered, appears after scrolling past hero */}
+      <nav
+        className={`hidden md:block fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
+          visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-3 pointer-events-none'
+        }`}
+      >
+        <div className="bg-white/10 backdrop-blur-xl rounded-[50px] shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-white/15 px-6 py-2">
+          <ul className="flex gap-1 items-center uppercase">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                {item.isHome ? (
+                  <a
+                    href={item.href}
+                    className={`${baseLinkClasses} group`}
+                  >
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition-colors duration-200 group-hover:bg-[#A5B4FC]/30">
+                      <IoHome size={18} className="text-[#e0e0e0]" />
+                    </span>
+                  </a>
+                ) : (
+                  <a
+                    href={item.href}
+                    className={`${baseLinkClasses} ${underlineClasses}`}
+                  >
+                    {item.label}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+
+      {/* Mobile navbar — top-right, always visible */}
+      <div className="md:hidden fixed top-4 right-4 z-50">
+        <button
+          onClick={() => setMenuOpen((prev) => !prev)}
+          className="flex flex-col items-center justify-center w-10 h-10 gap-[5px] group"
+          aria-label="Toggle menu"
+        >
+          <span
+            className={`block h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out ${
+              menuOpen ? 'translate-y-[7px] rotate-45' : ''
+            }`}
+          />
+          <span
+            className={`block h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out ${
+              menuOpen ? 'opacity-0 scale-x-0' : ''
+            }`}
+          />
+          <span
+            className={`block h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out ${
+              menuOpen ? '-translate-y-[7px] -rotate-45' : ''
+            }`}
+          />
+        </button>
+
+        <div
+          className={`absolute top-14 right-0 min-w-[180px] bg-white/10 backdrop-blur-xl rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-white/15 overflow-hidden transition-all duration-300 origin-top-right ${
+            menuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
+          }`}
+        >
+          <ul className="flex flex-col py-2 uppercase">
+            {navItems.map((item) => (
+              <li key={item.href}>
                 <a
                   href={item.href}
-                  className={`${baseLinkClasses} group`}
+                  onClick={() => setMenuOpen(false)}
+                  className="flex items-center gap-3 px-5 py-3 text-sm font-normal tracking-wide text-[#e0e0e0] transition-colors duration-200 hover:bg-white/10 hover:text-white"
                 >
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 transition-colors duration-200 group-hover:bg-[#A5B4FC]/30">
-                    <IoHome size={18} className="text-[#e0e0e0]" />
-                  </span>
+                  {item.isHome && <IoHome size={16} />}
+                  {!item.isHome && item.label}
                 </a>
-              ) : (
-                <a
-                  href={item.href}
-                  className={`${baseLinkClasses} ${underlineClasses}`}
-                >
-                  {item.label}
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </nav>
+    </>
   );
 }
