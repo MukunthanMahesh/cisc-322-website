@@ -13,7 +13,7 @@ const teamMembers: TeamMember[] = [
   { name: 'Tanish Samarawickrema', image: '/images/tanish-samarawickrema.png', linkedin: 'https://www.linkedin.com/in/tanish-samarawickrema05/', role: 'Presenter' },
   { name: 'Ansh Sudani', image: '/images/ansh-sudani.png', linkedin: 'https://www.linkedin.com/in/anshsudani/' },
   { name: 'Jack Gong', image: '/images/jack-gong.png', linkedin: 'https://www.linkedin.com/in/jack-gong-639a22385/' },
-  { name: 'Sid Varmalluri', image: '/images/sid-varmalluri.png', linkedin: '#' },
+  { name: 'Sidhardh Varma Alluri', image: '/images/sid-varma.JPG', linkedin: '#' },
 ];
 
 export default function Team() {
