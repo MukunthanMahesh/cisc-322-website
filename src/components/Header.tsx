@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { IoHome } from 'react-icons/io5';
+import { IoHome, IoMenu, IoClose } from 'react-icons/io5';
 
 const navItems = [
   { href: '#hero', label: 'Home', isHome: true },
@@ -75,24 +75,10 @@ export default function Header() {
       <div className="md:hidden fixed top-4 right-4 z-50">
         <button
           onClick={() => setMenuOpen((prev) => !prev)}
-          className="flex flex-col items-center justify-center w-10 h-10 gap-[5px] group"
+          className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.3)] border border-white/15 text-[#e0e0e0] transition-colors duration-200 hover:bg-white/20"
           aria-label="Toggle menu"
         >
-          <span
-            className={`block h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out ${
-              menuOpen ? 'translate-y-[7px] rotate-45' : ''
-            }`}
-          />
-          <span
-            className={`block h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out ${
-              menuOpen ? 'opacity-0 scale-x-0' : ''
-            }`}
-          />
-          <span
-            className={`block h-[2px] w-6 bg-white rounded-full transition-all duration-300 ease-in-out ${
-              menuOpen ? '-translate-y-[7px] -rotate-45' : ''
-            }`}
-          />
+          {menuOpen ? <IoClose size={22} /> : <IoMenu size={22} />}
         </button>
 
         <div
@@ -109,7 +95,7 @@ export default function Header() {
                   className="flex items-center gap-3 px-5 py-3 text-sm font-normal tracking-wide text-[#e0e0e0] transition-colors duration-200 hover:bg-white/10 hover:text-white"
                 >
                   {item.isHome && <IoHome size={16} />}
-                  {!item.isHome && item.label}
+                  {item.label}
                 </a>
               </li>
             ))}
