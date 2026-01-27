@@ -8,17 +8,16 @@ interface DeliverableCardProps {
 
 export default function DeliverableCard({ 
   title, 
-  date, 
-  description, 
-  pdfUrl, 
+  date,
+  description,
+  pdfUrl,
   videoUrl 
 }: DeliverableCardProps) {
   return (
     <div 
-      className="rounded-2xl flex flex-row h-64 overflow-hidden"
+      className="rounded-2xl flex flex-row h-64 overflow-hidden bg-linear-to-b from-[#070707] to-[#111C2A]"
       style={{
-        border: '2px solid #68528D',
-        background: 'linear-gradient(135deg, #070707 0%, #111C2A 80%)'
+        border: '2px solid #68528D'
       }}
     >
       {/* PDF Preview */}
