@@ -1,63 +1,53 @@
+import DeliverableCard from './DeliverableCard';
+
+const deliverables = [
+  {
+    title: "Conceptual Architecture",
+    date: "Feb 13th, 2026",
+    description: "Details will be available on February 13th, 2026.",
+    pdfUrl: undefined,
+    videoUrl: undefined,
+  },
+  {
+    title: "Concrete Architecture",
+    date: "Mar 13, 2026",
+    description: "Details will be available on March 13th, 2026.",
+    pdfUrl: undefined,
+    videoUrl: undefined,
+  },
+  {
+    title: "Enhancement Report",
+    date: "Apr 6, 2026",
+    description: "Details will be available on April 6th, 2026.",
+    pdfUrl: undefined,
+    videoUrl: undefined,
+  },
+];
+
+
 export default function Deliverables() {
   return (
-    <section id="deliverables" className="py-20">
+    <section id="deliverables" className="py-10">
       <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8">
+        <h2 className="text-3xl font-bold text-white mb-8 text-center font-editorial uppercase">
           Assignments
         </h2>
         
-        <div className="space-y-10">
-          <div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">
-              Reports
-            </h3>
-            <ul className="space-y-3">
-              <li className="flex items-baseline gap-3">
-                <span className="text-gray-500 text-sm">Date TBD</span>
-                <a href="#" className="text-blue-600 hover:underline">
-                  Report 1
-                </a>
-              </li>
-              <li className="flex items-baseline gap-3">
-                <span className="text-gray-500 text-sm">Date TBD</span>
-                <a href="#" className="text-blue-600 hover:underline">
-                  Report 2
-                </a>
-              </li>
-              <li className="flex items-baseline gap-3">
-                <span className="text-gray-500 text-sm">Date TBD</span>
-                <a href="#" className="text-blue-600 hover:underline">
-                  Report 3
-                </a>
-              </li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">
-              Presentations
-            </h3>
-            <ul className="space-y-3">
-              <li className="flex items-baseline gap-3">
-                <span className="text-gray-500 text-sm">Date TBD</span>
-                <a href="#" className="text-blue-600 hover:underline">
-                  Presentation 1 
-                </a>
-              </li>
-              <li className="flex items-baseline gap-3">
-                <span className="text-gray-500 text-sm">Date TBD</span>
-                <a href="#" className="text-blue-600 hover:underline">
-                  Presentation 2 
-                </a>
-              </li>
-              <li className="flex items-baseline gap-3">
-                <span className="text-gray-500 text-sm">Date TBD</span>
-                <a href="#" className="text-blue-600 hover:underline">
-                  Presentation 3
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div className="flex flex-col gap-6">
+          {deliverables.map((deliverable, index) => (
+            <div
+              key={index}
+              className=""
+            >
+              <DeliverableCard
+                title={deliverable.title}
+                date={deliverable.date}
+                description={deliverable.description}
+                pdfUrl={deliverable.pdfUrl}
+                videoUrl={deliverable.videoUrl}
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

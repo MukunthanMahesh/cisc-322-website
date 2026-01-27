@@ -5,7 +5,7 @@ export default function Resources() {
   return (
     <section
       id="resources"
-      className="py-20 flex flex-col items-center"
+      className="py-10 flex flex-col items-center"
     >
       <div className="text-center max-w-5xl w-full mx-auto px-6">
         <h2 className="text-3xl font-bold mb-8 font-editorial uppercase">
