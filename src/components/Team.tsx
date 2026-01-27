@@ -4,12 +4,13 @@ type TeamMember = {
   name: string;
   image: string;
   linkedin: string;
+  role?: string;
 };
 
 const teamMembers: TeamMember[] = [
-  { name: 'Mukunthan Mahesh', image: '/images/mukunthan-mahesh.png', linkedin: 'https://www.linkedin.com/in/mukunthan-mahesh/' },
-  { name: 'Mark Luo', image: '/images/mark-luo.png', linkedin: 'https://www.linkedin.com/in/mark-luo-879a96326/' },
-  { name: 'Tanish Samarawickrema', image: '/images/tanish-samarawickrema.png', linkedin: 'https://www.linkedin.com/in/tanish-samarawickrema05/' },
+  { name: 'Mukunthan Mahesh', image: '/images/mukunthan-mahesh.png', linkedin: 'https://www.linkedin.com/in/mukunthan-mahesh/', role: 'Team Lead' },
+  { name: 'Mark Luo', image: '/images/mark-luo.png', linkedin: 'https://www.linkedin.com/in/mark-luo-879a96326/', role: 'Presenter' },
+  { name: 'Tanish Samarawickrema', image: '/images/tanish-samarawickrema.png', linkedin: 'https://www.linkedin.com/in/tanish-samarawickrema05/', role: 'Presenter' },
   { name: 'Ansh Sudani', image: '/images/ansh-sudani.png', linkedin: 'https://www.linkedin.com/in/anshsudani/' },
   { name: 'Jack Gong', image: '/images/jack-gong.png', linkedin: 'https://www.linkedin.com/in/jack-gong-639a22385/' },
   { name: 'Sid Varmalluri', image: '/images/sid-varmalluri.png', linkedin: '#' },
@@ -52,6 +53,11 @@ export default function Team() {
               <h3 className="text-base font-medium text-slate-50">
                 {member.name}
               </h3>
+              {member.role && (
+                <p className="mt-1 text-xs uppercase tracking-wide text-slate-400">
+                  {member.role}
+                </p>
+              )}
             </div>
           ))}
         </div>
