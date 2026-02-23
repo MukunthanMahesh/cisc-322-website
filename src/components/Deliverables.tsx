@@ -4,9 +4,9 @@ const deliverables = [
   {
     title: "Conceptual Architecture",
     date: "Feb 13th, 2026",
-    description: "Details will be available on February 13th, 2026.",
-    pdfUrl: undefined,
-    videoUrl: undefined,
+    description: "This report provides a comprehensive conceptual analysis of the Gemini CLI architecture, its governing principles, and its limitations.",
+    pdfUrl: 'https://drive.google.com/file/d/1gSQ6-N5vKafOrgNkJkiPaywX6lhfUb2P/view?usp=sharing',
+    videoUrl: 'https://docs.google.com/presentation/d/16MTtuJeCMigRYuNfKdU3ckEUvY3ZyHMH/edit?usp=sharing&ouid=107779766958181252248&rtpof=true&sd=true',
   },
   {
     title: "Concrete Architecture",
