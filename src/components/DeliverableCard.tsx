@@ -4,6 +4,7 @@ interface DeliverableCardProps {
   description: string;
   pdfUrl?: string;
   videoUrl?: string;
+  pdfPreviewImage?: string;
 }
 
 export default function DeliverableCard({ 
@@ -11,10 +12,12 @@ export default function DeliverableCard({
   date,
   description,
   pdfUrl,
-  videoUrl 
+  videoUrl,
+  pdfPreviewImage,
 }: DeliverableCardProps) {
   const hasPdf = Boolean(pdfUrl);
   const hasVideo = Boolean(videoUrl);
+  const hasPdfPreviewImage = Boolean(pdfPreviewImage);
 
   return (
     <div 
@@ -25,10 +28,18 @@ export default function DeliverableCard({
     >
       {/* PDF Preview */}
       <div className="hidden md:flex md:w-1/3 bg-black/30 items-center justify-center">
-        <div className="text-gray-400 text-center">
-          <p className="text-xl font-bold">PDF</p>
-          <p className="text-xs">Preview</p>
-        </div>
+        {hasPdfPreviewImage ? (
+          <img
+            src={pdfPreviewImage}
+            alt={`${title} PDF preview`}
+            className="w-full h-full object-cover object-top"
+          />
+        ) : (
+          <div className="text-gray-400 text-center">
+            <p className="text-xl font-bold">PDF</p>
+            <p className="text-xs">Preview</p>
+          </div>
+        )}
       </div>
       
       {/* Content Area */}

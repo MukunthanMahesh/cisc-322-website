@@ -7,6 +7,7 @@ const deliverables = [
     description: "This report provides a comprehensive conceptual analysis of the Gemini CLI architecture, its governing principles, and its limitations.",
     pdfUrl: 'https://drive.google.com/file/d/1gSQ6-N5vKafOrgNkJkiPaywX6lhfUb2P/view?usp=sharing',
     videoUrl: 'https://docs.google.com/presentation/d/16MTtuJeCMigRYuNfKdU3ckEUvY3ZyHMH/edit?usp=sharing&ouid=107779766958181252248&rtpof=true&sd=true',
+    pdfPreviewImage: '/images/thumbnails/conceptual_architecture_thumbnail.jpg',
   },
   {
     title: "Concrete Architecture",
@@ -45,6 +46,7 @@ export default function Deliverables() {
                 description={deliverable.description}
                 pdfUrl={deliverable.pdfUrl}
                 videoUrl={deliverable.videoUrl}
+                pdfPreviewImage={deliverable.pdfPreviewImage}
               />
             </div>
           ))}
