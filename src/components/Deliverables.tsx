@@ -12,9 +12,10 @@ const deliverables = [
   {
     title: "Concrete Architecture",
     date: "Mar 13, 2026",
-    description: "Details will be available on March 13th, 2026.",
-    pdfUrl: undefined,
-    videoUrl: undefined,
+    description: "This report provides a detailed concrete analysis of the Gemini CLI architecture, examining its actual implementation, component interactions, and structural design.",
+    pdfUrl: "https://docs.google.com/document/d/18Qn3rJbqhalOI45SQL4SLfOnnvAx4A3flZFksmh50V4/edit?usp=sharing",
+    videoUrl: 'https://docs.google.com/presentation/d/1Pccl4wBs2LuQXyXDPJfyMGAm0pQHXhgz/edit?usp=sharing&ouid=106255804162809543719&rtpof=true&sd=true',
+    pdfPreviewImage: '/images/thumbnails/concrete_architecture_thumbnail.png',
   },
   {
     title: "Enhancement Report",
