@@ -30,7 +30,7 @@ const deliverables = [
       "This report provides an enhancement proposal for the Gemini CLI architecture. In particular, we want to add support for user-defined output schemas, similar to Claude Code and OpenAI Codex, to enable predictable structured outputs for multi-agent workflows",
     pdfUrl:
       "https://drive.google.com/file/d/1TZ11rPhH4oh4stIGFS9bmqDid4FYdu4Y/view?usp=sharing",
-    videoUrl: undefined,
+    videoUrl: "https://www.youtube.com/watch?v=60gkNisaF4E",
     pdfPreviewImage: "/images/thumbnails/architectural_enhancement_report.png",
   },
 ];
